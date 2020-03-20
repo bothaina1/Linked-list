@@ -17,7 +17,7 @@ public class Runner {
         boolean c = false;
         boolean r = false;
         String str;
-        int num;
+       int num;
         char ch='y';
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -30,7 +30,12 @@ public class Runner {
                 System.out.println("5- Multiply two polynomials\n");
                System.out.println("6- Evaluate a polynomial at some point\n");
                 System.out.println("7- Clear a polynomial variable\n");
-num = scanner.nextInt();
+                while(!scanner.hasNextInt()) {
+                	String input = scanner.next();
+                    System.out.printf("\"%s\" is not a valid choice.\n", input);
+                	
+                }
+                  num = scanner.nextInt();
             }
             while (1>num||num>7);
             switch (num) {
