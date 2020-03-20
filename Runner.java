@@ -32,7 +32,7 @@ public class Runner {
                 System.out.println("7- Clear a polynomial variable\n");
                 while(!scanner.hasNextInt()) {
                 	String input = scanner.next();
-                    System.out.printf("\"%s\" is not a valid choice.\n", input);
+                    System.out.printf("\"%s\" is not a valid choice.\n enter a correct number\n", input);
                 	
                 }
                   num = scanner.nextInt();
@@ -89,14 +89,18 @@ public class Runner {
                     System.out.println("Polynomial " + poly + " is set\n");}
                     break;
                 case 2:
+                	if(a||b||c) {
                     do {
                         System.out.println("Insert the variable name : (A,B,C,R)\n ");
                         poly = scanner.next().toUpperCase().charAt(0);
                     }
                     while (!((poly=='A'&&a)||(poly=='B'&&b)||(poly=='C'&&c)||(poly=='R'&&r)));
                     System.out.println(polynomialSolver.print(poly));
+                	}
                     break;
+                	
                 case 3:
+                	if(a||b||c) {
                     do {
                         System.out.println("Insert two variables : (A,B,C)\n");
                         poly = scanner.next().toUpperCase().charAt(0);
@@ -107,8 +111,10 @@ public class Runner {
                     polynomialSolver.add(poly, poly1);
                     r=true;
                     System.out.println(poly+" + "+poly1+" is: "+polynomialSolver.print('R'));
+                	}
                     break;
                 case 4:
+                	if(a||b||c) {
                     do {
                         System.out.println("Insert two variables : (A,B,C)\n");
                         poly = scanner.next().toUpperCase().charAt(0);
@@ -118,8 +124,9 @@ public class Runner {
                     polynomialSolver.subtract(poly, poly1);
                     r=true;
                     System.out.println(poly+" - "+poly1+" = "+polynomialSolver.print('R'));
+                	}
                     break;
-                case 5:
+                case 5:if(a||b||c) {
                     do {
                         System.out.println("Insert two variables : (A,B,C)\n");
                         poly = scanner.next().toUpperCase().charAt(0);
@@ -129,8 +136,10 @@ public class Runner {
                     polynomialSolver.multiply(poly, poly1);
                     r=true;
                     System.out.println(poly+" * "+poly1+" is: "+polynomialSolver.print('R'));
+                }
                     break;
                 case 6:
+                	if(a||b||c) {
                     do {
                         System.out.println("Insert the variable name : (A,B,C)\n");
                         poly = scanner.next().toUpperCase().charAt(0);
@@ -139,8 +148,10 @@ public class Runner {
                     System.out.println("Insert your value :\n");
                     value = scanner.nextFloat();
                     System.out.println("The result is: "+polynomialSolver.evaluatePolynomial(poly, value));
+                	}
                     break;
                 case 7:
+                	if(a||b||c) {
                     do {
                         System.out.println("Insert the variable name : (A,B,C,R)\n");
                         poly = scanner.next().toUpperCase().charAt(0);
@@ -156,6 +167,7 @@ public class Runner {
                     if(poly=='R')
                     	r=false;
                     System.out.println("Polynomial " + poly + " is cleared");
+                	}
                     break;
                      
 
